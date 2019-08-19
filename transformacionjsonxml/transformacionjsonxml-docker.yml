@@ -1,0 +1,19 @@
+spring:
+  rabbitmq:
+    host: broker
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    stream:
+      bindings:
+        transformacionSubscribableChannel:
+          destination: conectorEntradaMessages
+          group: transformacionjsonxmlQueue
+        transformacionMessagesChannel:
+          destination: transformacionjsonxmlMessages
+        transformacionMessagesChannelErrores:
+          destination: replayMessages
+                    
+logging:
+  config: ${configserver.discovered.uri}/logback/default/master/logback-spring-docker.xml

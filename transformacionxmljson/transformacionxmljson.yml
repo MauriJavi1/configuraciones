@@ -1,0 +1,21 @@
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    stream:
+      bindings:
+        transformacionSubscribableChannel:
+          destination: conectorSalidaMessages
+          group: transformacionxmljsonQueue
+          consumer:
+            maxAttempts: 1
+        transformacionMessagesChannel:
+          destination: replayMessages
+          consumer:
+            maxAttempts: 1
+                    
+logging:
+  config: ${configserver.discovered.uri}/logback/default/master/logback-spring.xml

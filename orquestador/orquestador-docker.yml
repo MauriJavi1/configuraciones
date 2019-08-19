@@ -1,0 +1,6 @@
+logging:
+  config: ${configserver.discovered.uri}/logback/default/master/logback-spring-docker.xml
+  
+solucion:
+  s2: 
+    itinerario: transformacionjsonxml,enriquecedor,conectorSalida,transformacionxmljson
