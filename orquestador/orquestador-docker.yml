@@ -3,4 +3,4 @@ logging:
   
 solucion:
   s2: 
-    itinerario: transformacionjsonxml,enriquecedor,conectorSalida,transformacionxmljson,testing
+    itinerario: transformacionjsonxml,enriquecedor,conectorSalida,transformacionxmljson
