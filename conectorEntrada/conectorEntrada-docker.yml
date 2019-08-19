@@ -22,6 +22,3 @@ solucion:
     tipoComposicion: coreografia
   s2:
     tipoComposicion: orquestacion
-    
-logging:
-  config: ${configserver.discovered.uri}/logback/default/master/logback-spring-docker.xml

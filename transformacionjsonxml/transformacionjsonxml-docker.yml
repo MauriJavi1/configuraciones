@@ -15,5 +15,3 @@ spring:
         transformacionMessagesChannelErrores:
           destination: replayMessages
                     
-logging:
-  config: ${configserver.discovered.uri}/logback/default/master/logback-spring-docker.xml
