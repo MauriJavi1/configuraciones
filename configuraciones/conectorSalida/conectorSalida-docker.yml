@@ -1,0 +1,29 @@
+spring:
+  rabbitmq:
+    host: broker
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    stream:
+      bindings:
+        conectorSalidaSubscribableChannel:
+          destination: enriquecedorMessages
+          group: conectorSalidaQueue
+        conectorSalidaMessagesChannel:
+          destination: conectorSalidaMessages
+        conectorSalidaErrorsChannel:
+          destination: replayMessages
+            
+conectorSalida:
+  s1:
+    clienteWSDL: http://clientefinalsoap:9002/ws/empresas.wsdl
+    requestParam1:  razonSocial
+  s2:
+    clienteWSDL: http://clientefinalsoap:9002/ws/empresas.wsdl
+    requestParam1:  razonSocial
+            
+  
+    
+logging:
+  config: ${configserver.discovered.uri}/logback/default/master/logback-spring-docker.xml
